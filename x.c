@@ -2123,6 +2123,7 @@ run:
 	xinit(cols, rows);
 	xsetenv();
 	selinit();
+	fullscreen(NULL);
 	run();
 
 	return 0;
