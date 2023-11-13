@@ -15,6 +15,17 @@
       });
     };
 
+    # Add clangd for lsp
+    devShell.x86_64-linux = with nixpkgs.legacyPackages.x86_64-linux; mkShell {
+      buildInputs = [ 
+        # compile st
+        st.nativeBuildInputs
+        st.buildInputs
+        # add clangs for lsp
+        clang_16 
+      ];
+    };
+
     defaultPackage.x86_64-linux = self.packages.x86_64-linux.myPackage;
   };
 }
